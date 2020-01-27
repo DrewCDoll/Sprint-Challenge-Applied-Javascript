@@ -17,3 +17,37 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const cPics = document.querySelectorAll('img');
+const pics = Array.from(cPics);
+
+let curIndex = 0;
+pics[curIndex].classList.toggle('img-show');
+
+document.querySelector('.left-button').addEventListener('click', () => {
+  if (curIndex === 0) {
+    pics[curIndex].classList.toggle('img-show');
+    curIndex = (pics.length - 1);
+    pics[curIndex].classList.toggle('img-show');
+  } else {
+    pics[curIndex].classList.toggle('img-show');
+    curIndex = curIndex - 1;
+    pics[curIndex].classList.toggle('img-show');
+  }
+})
+
+document.querySelector('.right-button').addEventListener('click', () => {
+  if (curIndex === (pics.length - 1)) {
+    pics[curIndex].classList.toggle('img-show');
+    curIndex = 0;
+    pics[curIndex].classList.toggle('img-show');
+  } else {
+    pics[curIndex].classList.toggle('img-show');
+    curIndex = curIndex + 1;
+    pics[curIndex].classList.toggle('img-show');
+  }
+})
+
+
+
+
